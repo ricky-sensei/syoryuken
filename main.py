@@ -26,7 +26,9 @@ h_images = [pygame.image.load(i) for i in hadouken]
 screen = pygame.display.set_mode((300, 300))
 screen.fill((255, 255, 255))
 pygame.display.set_caption("昇龍拳")
-counter = 0
+
+
+# def display_image(img):
 
 # メインループ
 running = True
@@ -40,19 +42,14 @@ while running:
                 syoryuken_se.play()
                 for i in s_images:
                     screen.fill((255, 255, 255))
-                    screen.blit(s_images[counter], (0, screen.get_height() - s_images[counter].get_height()))
-                    counter += 1
-                    if counter == len(s_images):
-                        counter = 0
+                    screen.blit(i, (0, screen.get_height() - i.get_height()))
                     pygame.display.update()
                     pygame.time.wait(50)
             elif event.key == K_h:
                 hadouken_se.play()
                 for i in h_images:
-                    screen.blit(h_images[counter], (0, screen.get_height() - h_images[counter].get_height()))
-                    counter += 1
-                    if counter == len(h_images):
-                        counter = 0
+                    screen.fill((255, 255, 255))
+                    screen.blit(i, (0, screen.get_height()+ 5 - i.get_height()-20))
                     pygame.display.update()
                     pygame.time.wait(50)
 
