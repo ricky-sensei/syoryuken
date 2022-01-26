@@ -37,18 +37,18 @@ while running:
         if event.type == QUIT:
             running = False
         if event.type == KEYDOWN:
-            screen.fill((255, 255, 255))
+            screen.fill((100, 200, 100))
             if event.key == K_s:
                 syoryuken_se.play()
                 for i in s_images:
-                    screen.fill((255, 255, 255))
+                    screen.fill((100, 200, 100))
                     screen.blit(i, (0, screen.get_height() - i.get_height()))
                     pygame.display.update()
                     pygame.time.wait(50)
             elif event.key == K_h:
                 hadouken_se.play()
                 for i in h_images:
-                    screen.fill((255, 255, 255))
+                    screen.fill((100, 200, 100))
                     screen.blit(i, (0, screen.get_height()+ 5 - i.get_height()-20))
                     pygame.display.update()
                     pygame.time.wait(50)
