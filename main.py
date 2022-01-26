@@ -3,8 +3,8 @@
 
 import pygame
 from pygame.locals import *
-import re #正規表現
-import glob #ファイル操作
+import re  # 正規表現
+import glob  # ファイル操作
 
 pygame.init()
 
@@ -33,7 +33,7 @@ running = True
 while running:
     for event in pygame.event.get():
         if event.type == QUIT:
-            running = False                              
+            running = False
         if event.type == KEYDOWN:
             screen.fill((255, 255, 255))
             if event.key == K_s:
@@ -56,7 +56,6 @@ while running:
                     pygame.time.wait(50)
 
     pygame.display.update()
-
 pygame.quit()
 
 # 問題①画像表示の部分で関数を使ってみよう
