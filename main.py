@@ -39,6 +39,7 @@ while running:
             if event.key == K_s:
                 syoryuken_se.play()
                 for i in s_images:
+                    screen.fill((255, 255, 255))
                     screen.blit(s_images[counter], (0, screen.get_height() - s_images[counter].get_height()))
                     counter += 1
                     if counter == len(s_images):
