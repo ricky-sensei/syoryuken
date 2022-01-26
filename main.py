@@ -22,12 +22,14 @@ hadouken.sort(key=lambda s: int(re.search(r'\d+', s).group()))
 # 画像のロード（内包表記）
 s_images = [pygame.image.load(i) for i in syoryuken]
 h_images = [pygame.image.load(i) for i in hadouken]
+SF_img = pygame.image.load("street_fighter_bg.jpeg")
 
-screen = pygame.display.set_mode((300, 300))
+screen = pygame.display.set_mode((235, 214))
 screen.fill((255, 255, 255))
 pygame.display.set_caption("昇龍拳")
 
-
+# 背景表示
+screen.blit(SF_img, (0, 0))
 # def display_image(img):
 
 # メインループ
@@ -37,18 +39,18 @@ while running:
         if event.type == QUIT:
             running = False
         if event.type == KEYDOWN:
-            screen.fill((100, 200, 100))
+            screen.blit(SF_img, (0, 0))
             if event.key == K_s:
                 syoryuken_se.play()
                 for i in s_images:
-                    screen.fill((100, 200, 100))
+                    screen.blit(SF_img, (0, 0))
                     screen.blit(i, (0, screen.get_height() - i.get_height()))
                     pygame.display.update()
                     pygame.time.wait(50)
             elif event.key == K_h:
                 hadouken_se.play()
                 for i in h_images:
-                    screen.fill((100, 200, 100))
+                    screen.blit(SF_img, (0, 0))
                     screen.blit(i, (0, screen.get_height()+ 5 - i.get_height()-20))
                     pygame.display.update()
                     pygame.time.wait(50)
